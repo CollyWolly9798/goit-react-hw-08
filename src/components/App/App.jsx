@@ -20,7 +20,7 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
   return isRefreshing ? (
-    <strong>Getting user data please wait...</strong>
+    <strong>Getting user data, please wait...</strong>
   ) : (
     <div className={css.div}>
       <Layout>
