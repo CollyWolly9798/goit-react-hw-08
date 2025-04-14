@@ -1,25 +1,52 @@
-import { Field, Form, Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/auth/operations';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import css from './LoginForm.module.css';
+import toast from 'react-hot-toast';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
+
   const handleLogin = (values, actions) => {
-    dispatch(login(values));
+    dispatch(login(values))
+      .unwrap()
+      .then(({ user }) => {
+        toast.success(`Welcome back, ${user.name}!`);
+      });
     actions.resetForm();
   };
+
+  const loginSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string().min(8, 'Too Short!').max(20, 'Too Long!').required('Required'),
+  });
+
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={handleLogin}>
-      <Form autoComplete='off'>
-        <label>
-          Email
-          <Field type='email' name='email' />
-        </label>
-        <label>
-          Password
-          <Field type='password' name='password' />
-        </label>
-        <button type='submit'>Login</button>
+    <Formik validationSchema={loginSchema} initialValues={{ email: '', password: '' }} onSubmit={handleLogin}>
+      <Form autoComplete='off' className={css.form}>
+        <div className={css.inputWrapper}>
+          <label htmlFor='email'>Email</label>
+          <div className={css.inputIcon}>
+            <MdEmail className={css.icon} />
+            <Field className={css.field} type='email' name='email' />
+          </div>
+          <ErrorMessage className={css.err} name='email' component='span' />
+        </div>
+        <div className={css.inputWrapper}>
+          <label htmlFor='password'>Password</label>
+          <div className={css.inputIcon}>
+            <RiLockPasswordFill className={css.icon} />
+            <Field className={css.field} type='password' name='password' />
+          </div>
+          <ErrorMessage className={css.err} name='password' component='span' />
+        </div>
+        <button type='submit' className={css.btn}>
+          Login
+        </button>
       </Form>
     </Formik>
   );

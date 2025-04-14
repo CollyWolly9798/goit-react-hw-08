@@ -2,6 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import { FaUser, FaPhone } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 import css from './ContactForm.module.css';
 
 export default function ContactForm() {
@@ -15,20 +17,37 @@ export default function ContactForm() {
   });
 
   const handleSubmit = (value, actions) => {
-    dispatch(addContact(value));
+    dispatch(addContact(value))
+      .unwrap()
+      .then(() => toast('Contact successfully added!'));
     actions.resetForm();
   };
 
   return (
     <Formik validationSchema={FeedbackSchema} initialValues={{ name: '', number: '' }} onSubmit={handleSubmit}>
       <Form className={css.form}>
-        <label htmlFor=''>Name</label>
-        <Field className={css.field} type='text' name='name' id='' />
-        <ErrorMessage className={css.err} name='name' component='span' />
-        <label htmlFor=''>Number</label>
-        <Field className={css.field} type='text' name='number' id='' />
-        <ErrorMessage className={css.err} name='number' component='span' />
-        <button type='submit'>Add contact</button>
+        <div className={css.inputWrapper}>
+          <label htmlFor='name'>Name</label>
+          <div className={css.inputIcon}>
+            <FaUser className={css.icon} />
+            <Field className={css.field} type='text' name='name' id='name' />
+          </div>
+          <ErrorMessage className={css.err} name='name' component='span' />
+        </div>
+
+        <div className={css.inputWrapper}>
+          <label htmlFor='number'>Number</label>
+          <div className={css.inputIcon}>
+            <FaPhone className={css.icon} />
+            <Field className={css.field} type='text' name='number' id='number' />
+          </div>
+          <ErrorMessage className={css.err} name='number' component='span' />
+        </div>
+
+        <button type='submit' className={css.btn}>
+          Add contact
+        </button>
+        <Toaster />
       </Form>
     </Formik>
   );

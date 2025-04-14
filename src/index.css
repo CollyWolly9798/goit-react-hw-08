@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 h1,
 h2,
 h3,
@@ -27,4 +28,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }

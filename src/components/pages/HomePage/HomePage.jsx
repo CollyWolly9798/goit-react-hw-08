@@ -1,17 +1,15 @@
+import css from './HomePage.module.css';
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>HomePage</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate architecto quia, animi odio tempora ab
-        obcaecati, illo, saepe recusandae nulla nisi. Blanditiis, eligendi nemo. Unde maxime, sint, ipsa enim blanditiis
-        laboriosam reiciendis beatae repudiandae impedit tempore nisi placeat earum sapiente odit nulla vitae numquam
-        voluptatibus quod omnis expedita consectetur ipsum iure neque. Quis et tempora voluptate pariatur iure officiis
-        ipsum error dolorem aliquid itaque fugiat iste placeat, impedit incidunt quo, corporis magni! Ipsam quam rem
-        quasi deleniti iusto quo veritatis tempora perspiciatis? Quam quidem ab quas, molestiae dignissimos asperiores
-        at exercitationem facere fugit nesciunt fugiat vero corrupti magnam inventore impedit eveniet neque eum qui
-        voluptatibus eius id cumque nihil autem.
+    <div className={css.container}>
+      <h1 className={css.title}>Welcome 👋</h1>
+      <p className={css.text}>
+        This is your personal <strong>Contact Book</strong> — a safe and organized place to keep all your important
+        connections. You can add new contacts, edit existing ones, or search your contact list anytime. Use the menu
+        above to go to the Contacts page, and don’t forget to log out when you're done. 😉
       </p>
+      <p className={css.text}>Let’s get started — your digital phonebook is just a click away!</p>
     </div>
   );
 }
