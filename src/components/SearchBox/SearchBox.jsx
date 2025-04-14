@@ -11,7 +11,7 @@ export default function SearchBox() {
   return (
     <div className={css.form}>
       <div className={css.inputWrapper}>
-        <label htmlFor='search'>Find contacts by name</label>
+        <label htmlFor='search'>Find contacts by name or number</label>
         <div className={css.inputIcon}>
           <FaSearch className={css.icon} />
           <input className={css.inp} type='text' id='search' onChange={handleFilterChange} />
