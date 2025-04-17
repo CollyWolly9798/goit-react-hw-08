@@ -5,8 +5,7 @@ import { login } from '../../redux/auth/operations';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import css from './LoginForm.module.css';
-import toast from 'react-hot-toast';
-import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -16,6 +15,9 @@ export default function LoginForm() {
       .unwrap()
       .then(({ user }) => {
         toast.success(`Welcome back, ${user.name}!`);
+      })
+      .catch(() => {
+        toast.error('Invalid username or password. Please try again.');
       });
     actions.resetForm();
   };
@@ -47,6 +49,7 @@ export default function LoginForm() {
         <button type='submit' className={css.btn}>
           Login
         </button>
+        <Toaster />
       </Form>
     </Formik>
   );

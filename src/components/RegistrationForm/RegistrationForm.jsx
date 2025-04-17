@@ -5,7 +5,7 @@ import { register } from '../../redux/auth/operations';
 import { FaUser } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import css from './RegistrationForm.module.css';
 
 export default function RegistrationForm() {
@@ -15,7 +15,10 @@ export default function RegistrationForm() {
     dispatch(register(values))
       .unwrap()
       .then(({ user }) => {
-        toast.success('Registration successful! Welcome aboard!');
+        toast.success(`Registration successful! Welcome ${user.name} aboard!`);
+      })
+      .catch(() => {
+        toast.error('Oops! Registration failed. Please ensure all fields are correctly filled.');
       });
     actions.resetForm();
   };
@@ -60,6 +63,7 @@ export default function RegistrationForm() {
         <button type='submit' className={css.btn}>
           Register
         </button>
+        <Toaster />
       </Form>
     </Formik>
   );
