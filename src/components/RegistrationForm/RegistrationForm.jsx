@@ -6,7 +6,7 @@ import { FaUser } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import toast, { Toaster } from 'react-hot-toast';
-import css from './RegistrationForm.module.css';
+import css from './RegistrationForm.module.scss';
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
