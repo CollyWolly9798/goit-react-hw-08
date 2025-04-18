@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
 import { FaUser, FaPhone } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
-import css from './ContactForm.module.css';
+import css from './ContactForm.module.scss';
 
 export default function ContactForm() {
   const dispatch = useDispatch();

@@ -38,4 +38,3 @@ function App() {
 }
 
 export default App;
-// reacthw112@gmail.com

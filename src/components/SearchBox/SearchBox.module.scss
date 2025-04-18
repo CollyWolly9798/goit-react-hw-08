@@ -3,11 +3,3 @@
 .form {
   @include form($backgroundFormColor, $purpleColor, $purpleColor);
 }
-
-.err {
-  @include error($errorColor);
-}
-
-.btn {
-  @include buttonSubmit($purpleColor, #ffffff, #5e35b1);
-}

@@ -7,27 +7,23 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-.inputWrapper {
-  margin-bottom: 20px;
+.form .inputWrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
-
-.inputIcon {
+.form .inputIcon {
   position: relative;
   display: flex;
   align-items: center;
 }
-
-.icon {
+.form .icon {
   position: absolute;
   left: 12px;
   color: #7e57c2;
   font-size: 16px;
 }
-
-.inp {
+.form .field {
   width: 100%;
   padding: 10px 12px 10px 36px;
   font-size: 16px;
@@ -35,9 +31,30 @@
   border-radius: 8px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-
-.inp:focus {
+.form .field:focus {
   border-color: #7e57c2;
   box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
   outline: none;
 }
+
+.err {
+  font-size: 12px;
+  color: #e53935;
+  margin-top: 4px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #7e57c2;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover, .btn:focus {
+  background-color: #5e35b1;
+}/*# sourceMappingURL=LoginForm.module.css.map */

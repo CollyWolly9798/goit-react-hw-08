@@ -1,7 +1,7 @@
 import { changeFilter } from '../../redux/filters/slice';
 import { useDispatch } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
-import css from './SearchBox.module.css';
+import css from './SearchBox.module.scss';
 
 export default function SearchBox() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function SearchBox() {
         <label htmlFor='search'>Find contacts by name or number</label>
         <div className={css.inputIcon}>
           <FaSearch className={css.icon} />
-          <input className={css.inp} type='text' id='search' onChange={handleFilterChange} />
+          <input className={css.field} type='text' id='search' onChange={handleFilterChange} />
         </div>
       </div>
     </div>

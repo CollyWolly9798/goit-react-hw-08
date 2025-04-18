@@ -1,11 +1,11 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
-import css from '../LoginForm/LoginForm.module.scss';
 import toast, { Toaster } from 'react-hot-toast';
+import css from '../LoginForm/LoginForm.module.scss';
 
 export default function LoginForm() {
   const dispatch = useDispatch();

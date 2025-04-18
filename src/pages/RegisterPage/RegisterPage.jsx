@@ -1,5 +1,5 @@
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
-import css from './RegisterPage.module.css';
+import css from './RegisterPage.module.scss';
 
 export default function RegisterPage() {
   return (

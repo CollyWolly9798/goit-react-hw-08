@@ -1,8 +1,8 @@
 import { deleteContact } from '../../redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
-import { FaUser, FaPhone, FaTrash } from 'react-icons/fa';
-import css from './Contact.module.css';
+import { FaUser, FaPhone } from 'react-icons/fa';
+import css from './Contact.module.scss';
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export default function Contact({ contact }) {
     dispatch(deleteContact(contact.id)).unwrap().then(toast('Contact successfully deleted!'));
   };
   return (
-    <div className={css.wrap}>
+    <div className={css.wrapper}>
       <ul className={css.list}>
         <li className={css.li}>
           <FaUser className={css.icon} />
