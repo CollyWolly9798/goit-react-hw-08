@@ -1,10 +1,20 @@
 .contacts {
-  display: flex;
-  margin-top: 15px;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
 }
 
-.el {
-  width: calc(25% - 15px);
+@media screen and (min-width: 768px) {
+  .contacts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contacts {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

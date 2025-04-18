@@ -22,7 +22,7 @@ $linkColor: #6a1b9a;
 @mixin form($bg-color, $icon-color, $field-color-focus) {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   padding: 24px;
   background-color: $bg-color;
   border-radius: 12px;
