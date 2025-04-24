@@ -1,5 +1,5 @@
 import AppBar from '../AppBar/AppBar';
-import css from './Layout.module.css';
+import css from './Layout.module.scss';
 
 export default function Loyout({ children }) {
   return (

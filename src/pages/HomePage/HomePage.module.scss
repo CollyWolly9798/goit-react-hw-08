@@ -1,22 +1,22 @@
-@import '../../Variables/Variables.scss';
+@import '../../assets/variables/variables.scss';
 
 .container {
   max-width: 600px;
   margin: 40px auto;
   padding: 24px;
-  background-color: #ffffff;
+  background-color: $whiteColor;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
 .title {
-  @include title($titleColor);
+  @include title($darkPurpleColor);
 }
 
 .text {
   font-size: 16px;
-  color: #333;
+  color: $greyColor;
   line-height: 1.6;
   margin-bottom: 16px;
 }

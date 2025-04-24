@@ -1,7 +1,7 @@
-@import '../../Variables/Variables.scss';
+@import '../../assets/variables/variables.scss';
 
 .form {
-  @include form($backgroundFormColor, $purpleColor, $purpleColor);
+  @include form($whiteColor, $purpleColor, $purpleColor);
 }
 
 .err {
@@ -9,5 +9,5 @@
 }
 
 .btn {
-  @include buttonSubmit($purpleColor, #ffffff, #5e35b1);
+  @include buttonSubmit($purpleColor, $whiteColor, $darkPurpleColor);
 }

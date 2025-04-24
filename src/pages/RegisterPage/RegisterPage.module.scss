@@ -1,5 +1,5 @@
-@import '../../Variables/Variables.scss';
+@import '../../assets/variables/variables.scss';
 
 .title {
-  @include title($titleColor);
+  @include title($darkPurpleColor);
 }

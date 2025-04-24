@@ -1,14 +1,18 @@
 // Color
+$lightRedColor: #e84a5f;
+$darkRedColor: #d32f2f;
 $redColor: #f44336;
-$purpleColor: #7e57c2;
-$backgroundFormColor: #ffffff;
 $errorColor: #e53935;
+$whiteColor: #ffffff;
+$pinkColor: #8e24aa;
+$purpleColor: #7e57c2;
 $iconColor: #7e57c2;
-$titleColor: #5e35b1;
+$darkPurpleColor: #5e35b1;
+$greyColor: #333333;
 
 // Header Color
 $linkColor: #6a1b9a;
-
+$tealGreyColor: #2a363b;
 // Mixin
 @mixin title($title-color) {
   display: flex;
@@ -17,6 +21,12 @@ $linkColor: #6a1b9a;
   font-weight: 700;
   color: $title-color;
   margin-bottom: 20px;
+}
+
+@mixin largeContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 @mixin form($bg-color, $icon-color, $field-color-focus) {
@@ -68,7 +78,7 @@ $linkColor: #6a1b9a;
   max-width: 400px;
   margin: 12px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: $whiteColor;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -100,10 +110,10 @@ $linkColor: #6a1b9a;
   }
 }
 
-@mixin buttonSubmit($backgroundColor, $text-color, $hover-color) {
+@mixin buttonSubmit($background-color, $text-color, $hover-color) {
   width: 100%;
   padding: 12px 16px;
-  background-color: $backgroundColor;
+  background-color: $background-color;
   color: $text-color;
   font-weight: bold;
   font-size: 16px;
@@ -118,10 +128,10 @@ $linkColor: #6a1b9a;
   }
 }
 
-@mixin buttomDelete($backgroundColor, $hover-color) {
+@mixin buttomDelete($background-color, $hover-color) {
   padding: 10px 14px;
-  background-color: $backgroundColor;
-  color: #fff;
+  background-color: $background-color;
+  color: $whiteColor;
   font-weight: bold;
   font-size: 14px;
   border: none;

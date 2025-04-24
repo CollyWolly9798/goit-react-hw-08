@@ -1,5 +1,5 @@
 @import '../../assets/variables/variables.scss';
 
-.title {
-  @include title($darkPurpleColor);
+.container {
+  @include largeContainer();
 }

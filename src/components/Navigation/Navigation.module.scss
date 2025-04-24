@@ -1,4 +1,4 @@
-@import '../../Variables/Variables.scss';
+@import '../../assets/variables/variables.scss';
 
 .nav {
   display: flex;
@@ -8,7 +8,7 @@
 
 .link {
   text-decoration: none;
-  color: #333;
+  color: $greyColor;
   font-weight: 500;
   transition: color 0.2s ease-in-out;
 }
@@ -20,5 +20,5 @@
 .active {
   color: $linkColor;
   font-weight: 600;
-  border-bottom: 2px solid #6a1b9a;
+  border-bottom: 2px solid $linkColor;
 }

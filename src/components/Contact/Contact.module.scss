@@ -1,9 +1,9 @@
-@import '../../Variables/Variables.scss';
+@import '../../assets/variables/variables.scss';
 
 .wrapper {
   @include contactForm($iconColor);
 }
 
 .btn {
-  @include buttomDelete($redColor, #d32f2f);
+  @include buttomDelete($redColor, $darkRedColor);
 }

@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from '../../redux/auth/operations';
 import RestrictedRoute from '../RestrictedRoute';
 import PrivateRoute from '../PrivateRoute';
-import css from './App.module.css';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage/RegisterPage'));
@@ -22,7 +21,7 @@ function App() {
   return isRefreshing ? (
     <strong>Getting user data, please wait...</strong>
   ) : (
-    <div className={css.div}>
+    <div>
       <Layout>
         <Suspense fallback={null}>
           <Routes>
