@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import 'modern-normalize';
-import './index.css';
+import './index.scss';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
